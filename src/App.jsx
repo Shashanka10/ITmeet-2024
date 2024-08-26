@@ -10,6 +10,7 @@ import PreEventPage from './pages/Pre-eventPage'
 import SponsorPage from './pages/SponsorsPage'
 
 function App() {
+  
   return (
     <>
       <Navbar />
