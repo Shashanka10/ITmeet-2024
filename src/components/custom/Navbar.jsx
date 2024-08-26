@@ -62,9 +62,6 @@ export default function Navbar() {
       </div>
     )
   }
-
-
-  console.log("Open", open);
   return (
     <>
       <nav className="sticky bg-[#171A23] top-0 z-50 backdrop-filter backdrop-blur-lg border-b border-gray-900 w-full">
