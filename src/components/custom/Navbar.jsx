@@ -49,7 +49,7 @@ export default function Navbar() {
     setTimeout(() => {
       setTilt(false)
     }, 100);
-  }
+  };
 
   const items = (classes) => {
     return (
