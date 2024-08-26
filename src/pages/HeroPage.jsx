@@ -70,7 +70,7 @@ export default function HeroPage() {
       <div className="absolute -bottom-48 -right-32 sm:-bottom-56 sm:-right-40 md:-bottom-64 md:-right-48 rotate-90">
         <img src={BGNeon} alt="bgneo" className="object-contain w-[400px] sm:w-[500px] md:w-[550px] lg:w-[620px]" />
       </div>
-      <div className="absolute -bottom-24 -right-8 sm:-bottom-32 sm:-right-12 md:-bottom-36 md:-right-14 -rotate-45">
+      <div className="absolute -bottom-24 -right-8 sm:-bottom-32 sm:-right-12 md:-bottom-36 md:-right-14 -rotate-45 z-10">
         <img src={Mascot} alt="mascot" className="object-contain w-[220px] sm:w-[290px] md:w-[310px] lg:w-[370px]" />
       </div>
       <div className="absolute -top-16 -right-6 sm:-top-18 sm:-right-8 md:-top-20 md:-right-10 -rotate-12">

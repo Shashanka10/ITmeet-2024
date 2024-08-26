@@ -5,6 +5,10 @@
 html {
   scroll-behavior: smooth;
 }
+.leaflet-container{
+  height: 100vh;
+  z-index: 5;
+}
 
 @layer base {
   :root {
