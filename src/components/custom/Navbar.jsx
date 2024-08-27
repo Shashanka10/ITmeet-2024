@@ -54,12 +54,14 @@ export default function Navbar() {
   const items = (classes) => {
     return (
       <div className={`${classes} items-center`}>
-        {navItems.map((item) => (
-          <a key={item.id} href={item.url} className="hover:text-slate-300 uppercase text-sm">
-            {item.title}
-          </a>
-        ))}
-      </div>
+        {
+          navItems.map((item) => (
+            <a key={item.id} href={item.url} className="hover:text-slate-300 uppercase text-sm"  >
+              {item.title}
+            </a>
+          ))
+        }
+      </div >
     )
   }
   return (
@@ -83,12 +85,12 @@ export default function Navbar() {
             {open ?
               <FaX
                 onClick={() => setters()}
-                className={`transform transition-transform duration-250 ease-in-out ${tilt ? "rotate-0 scale-[1.2]" : "-rotate-90 scale-100"}`}
+                className={`transform transition-transform duration-250 ease-in-out ${tilt ? "rotate-0 scale-[1.15]" : "-rotate-90 scale-100"}`}
               />
               :
               <FaBars
                 onClick={() => setters()}
-                className={`transform transition-transform duration-250 ease-in-out ${tilt ? "rotate-90 scale-[1.2]" : "rotate-0 scale-100"}`}
+                className={`transform transition-transform duration-250 ease-in-out ${tilt ? "rotate-90 scale-[1.15]" : "rotate-0 scale-100"}`}
               />
             }
 
@@ -97,7 +99,7 @@ export default function Navbar() {
       </nav>
 
       {open &&
-        <div className={`w-full h-auto bg-[#171A23] text-white  fixed  z-50`}>
+        <div className={`w-full h-auto bg-[#171A23] text-white  fixed  z-50`} onClick={() => setters()}>
           {items("flex flex-col justify-center  space-y-5 p-5 font-semibold text-gray-400")}
         </div >
       }
