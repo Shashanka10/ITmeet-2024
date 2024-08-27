@@ -50,7 +50,7 @@ export default function Footer() {
         {/*responsive Split */}
         <div className='flex max-[450px]:space-y-14 max-[450px]:flex-col max-[400px]:justify-center  justify-around  align-middle items-center md:w-2/3 w-full mt-12'>
           {/* Middle part */}
-          <div className='flex-col   space-y-4 md:space-y-8 '>
+          <div className='flex-col  space-y-7 md:space-y-11 '>
             <h1 className='text-[#12dc9f] font-extrabold text-base max-[356px]:text-[0.8rem] sm:text-xl md:text-3xl'>Contact Us</h1>
             {/* Coordinator and general sec */}
             <div className='flex space-x-7'>
