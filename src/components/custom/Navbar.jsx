@@ -31,8 +31,13 @@ const navItems = [
   },
   {
     id: 6,
+    title: "Map",
+    url: "#locations",
+  },
+  {
+    id: 7,
     title: "Contact",
-    url: "#contact",
+    url: "#contacts",
   },
 ]
 
@@ -56,7 +61,7 @@ export default function Navbar() {
       <div className={`${classes} items-center`}>
         {
           navItems.map((item) => (
-            <a key={item.id} href={item.url} className="hover:text-slate-300 uppercase text-sm"  >
+            <a key={item.id} href={item.url} className="hover:text-slate-300 uppercase text-sm md:text-base"  >
               {item.title}
             </a>
           ))

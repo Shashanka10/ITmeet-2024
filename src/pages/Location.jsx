@@ -5,23 +5,25 @@ import { Icon } from "leaflet";
 import { GraduationCap } from "lucide-react";
 import LogoMap from "@/assets/images/logoMap.png";
 
-export default function ContactPage() {
+export default function LocationPage() {
+
   const position = [27.617225501485724, 85.53628499165596];
   const fillBlueOptions = { fillColor: 'blue' }
   const iconCustom = new Icon({
     iconUrl: LogoMap,
     iconSize: [32,34]
   });
+  
   return (
-    <div className="flex flex-col p-10 overflow-hidden gap-6 items-center justify-center min-h-[calc(100vh-3rem)] relative bg-slate-100">
+    <div className="flex flex-col p-10 overflow-hidden gap-8 items-center justify-center min-h-screen relative bg-slate-100">
       <div className="flex flex-col items-center gap-3">
         <h1 className="text-4xl font-bold text-[#171A23]">GET DIRECTIONS</h1>
-        <h2 className="border-4 w-[340px] rounded-full border-teal-500"></h2>
+        <h2 className="border-4 w-[340px] rounded-full border-[#14C58F]"></h2>
       </div>
       <div className="w-full">
         <MapContainer
           center={[27.617225501485724, 85.53628499165596]}
-          zoom={13}
+          zoom={14}
           scrollWheelZoom={false}
         >
           <TileLayer

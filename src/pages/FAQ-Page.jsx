@@ -59,14 +59,15 @@ const qna = [
 ];
 
 export default function FAQ() {
+
   return (
     <div className="flex flex-col overflow-hidden p-10 gap-8 items-center justify-center min-h-screen relative bg-slate-200">
       <div className="flex flex-col items-center gap-3">
         <h1 className="text-4xl font-bold text-[#171A23]">FAQs</h1>
-        <h2 className="border-4 w-[140px] rounded-full border-teal-500"></h2>
+        <h2 className="border-4 w-[140px] rounded-full border-[#14C58F]"></h2>
       </div>
       <div className="flex items-center w-full mt-5 justify-between gap-8">
-        <div className="w-1/2 h-[500px] space-y-3 rounded-l-3xl scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-[#171A23] overflow-y-scroll bg-[#171A23] text-white p-8 pl-12">
+        <div className="w-1/2 h-[500px] space-y-3 rounded-3xl scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-[#171A23] overflow-y-scroll bg-[#171A23] text-white p-8 pl-12">
           <div>
             <h1 className="text-2xl font-bold text-center">
               Frequently Asked Questions
@@ -87,7 +88,7 @@ export default function FAQ() {
             ))}
           </div>
         </div>
-        <div className="w-1/2 flex flex-col gap-12 h-[500px] bg-teal-700 text-white rounded-r-3xl p-8">
+        <div className="w-1/2 flex flex-col gap-12 h-[500px] bg-[#369FFF] text-white rounded-3xl p-8">
           <div>
             <h1 className="text-2xl font-bold text-center">
               Any questions? Let's talk.

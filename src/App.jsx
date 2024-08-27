@@ -1,13 +1,12 @@
-
 import Footer from './components/custom/Footer'
 import Navbar from './components/custom/Navbar'
 import AboutPage from './pages/AboutPage'
-import ContactPage from './pages/ContactPage'
 import FAQ from './pages/FAQ-Page'
 import HeroPage from './pages/HeroPage'
 import MainEventPage from './pages/Main-eventPage'
 import PreEventPage from './pages/Pre-eventPage'
 import SponsorPage from './pages/SponsorsPage'
+import LocationPage from './pages/Location'
 
 function App() {
   
@@ -30,10 +29,12 @@ function App() {
       <section id="faq">
         <FAQ />
       </section>
-      <section id="contact">
-        <ContactPage />
+      <section id="locations">
+        <LocationPage />
       </section>
-      <Footer />
+      <section id="contacts">
+        <Footer />
+      </section>
     </>
   );
 }

@@ -10,9 +10,10 @@ import AboutPage from './pages/AboutPage';
 import PreEventPage from './pages/Pre-eventPage';
 import MainEventPage from './pages/Main-eventPage';
 import SponsorPage from './pages/SponsorsPage';
-import ContactPage from './pages/ContactPage';
 import FAQ from './pages/FAQ-Page';
 import NotFoundPage from './pages/NotFoundPage';
+import LocationPage from './pages/Location';
+import Footer from './components/custom/Footer';
 
 
 
@@ -48,8 +49,13 @@ const router = createBrowserRouter([
     errorElement: <NotFoundPage />
   },
   {
+    path: "/locations",
+    element: <LocationPage />,
+    errorElement: <NotFoundPage />
+  },
+  {
     path: "/contacts",
-    element: <ContactPage />,
+    element: <Footer />,
     errorElement: <NotFoundPage />
   }
 ]);

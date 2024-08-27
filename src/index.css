@@ -6,7 +6,7 @@ html {
   scroll-behavior: smooth;
 }
 .leaflet-container{
-  height: 100vh;
+  height: 80vh;
   z-index: 5;
 }
 
