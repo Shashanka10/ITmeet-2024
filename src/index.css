@@ -4,9 +4,31 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding: 36px;
+}
+    /* Designing for scroll-bar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+  /* Track */
+::-webkit-scrollbar-track {
+    background: gainsboro;
+    border-radius: 10px;
+}
+
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: #9ca3af;
+    border-radius: 5px;
+}
+
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #727171;
 }
 .leaflet-container{
-  height: 80vh;
+  height: 75vh;
   z-index: 5;
 }
 
@@ -73,5 +95,6 @@ html {
   }
   body {
     @apply bg-background text-foreground;
+    font-family: "Rubik", sans-serif;
   }
 }

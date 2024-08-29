@@ -1,8 +1,12 @@
-import React from 'react'
+import React from "react";
 
 export default function PreEventPage() {
   return (
-    <div className="flex flex-col overflow-hidden gap-12 items-center justify-center min-h-screen relative bg-[#2a4cb3]">
-      PreEvents</div>
-  )
+    <div className="flex flex-col overflow-hidden p-10 gap-8 items-center justify-center min-h-screen bg-slate-100">
+      <div className="flex flex-col items-center gap-4">
+        <h1 className="text-4xl font-bold text-[#171A23]">PRE-EVENTS</h1>
+        <div className="w-full rounded-full bg-[#14C58F] h-2"></div>
+      </div>
+    </div>
+  );
 }

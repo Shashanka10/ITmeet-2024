@@ -61,44 +61,46 @@ const qna = [
 export default function FAQ() {
 
   return (
-    <div className="flex flex-col overflow-hidden p-10 gap-8 items-center justify-center min-h-screen relative bg-slate-200">
-      <div className="flex flex-col items-center gap-3">
-        <h1 className="text-4xl font-bold text-[#171A23]">FAQs</h1>
-        <h2 className="border-4 w-[140px] rounded-full border-[#14C58F]"></h2>
-      </div>
-      <div className="flex items-center w-full mt-5 justify-between gap-8">
-        <div className="w-1/2 h-[500px] space-y-3 rounded-3xl scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-[#171A23] overflow-y-scroll bg-[#171A23] text-white p-8 pl-12">
-          <div>
-            <h1 className="text-2xl font-bold text-center">
-              Frequently Asked Questions
-            </h1>
-          </div>
-          <div className="space-y-5">
-            {qna.map((item) => (
-              <Accordion type="single" collapsible className="w-full">
-                <AccordionItem value={item.id}>
-                  <AccordionTrigger className="text-lg text-start">
-                    {item.quest}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-base text-gray-300 text-pretty ">
-                    {item.ans}
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            ))}
-          </div>
+    <div className="flex flex-col overflow-hidden p-6 sm:p-8 md:p-10 gap-6 sm:gap-8 items-center justify-center min-h-screen bg-slate-100">
+    <div className="flex flex-col items-center gap-2 sm:gap-3">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#171A23]">
+        FAQs
+      </h1>
+      <div className="w-full rounded-full bg-[#14C58F] h-1 sm:h-2"></div>
+    </div>
+    <div className="flex flex-col lg:flex-row items-center w-full mt-0 md:mt-5 justify-between gap-6 sm:gap-8">
+      <div className="w-full lg:w-1/2 h-[400px] lg:h-[500px] space-y-3 rounded-2xl lg:rounded-3xl overflow-y-scroll bg-[#171A23] text-white p-6 sm:p-8 lg:pl-12">
+        <div>
+          <h1 className="text-2xl sm:text-3xl font-bold text-center">
+            Frequently Asked Questions
+          </h1>
         </div>
-        <div className="w-1/2 flex flex-col gap-12 h-[500px] bg-[#369FFF] text-white rounded-3xl p-8">
-          <div>
-            <h1 className="text-2xl font-bold text-center">
-              Any questions? Let's talk.
-            </h1>
-          </div>
-          <div>
-            <FormFAQ />
-          </div>
+        <div className="space-y-3 sm:space-y-5">
+          {qna.map((item) => (
+            <Accordion key={item.id} type="single" collapsible className="w-full">
+              <AccordionItem value={item.id.toString()}>
+                <AccordionTrigger className="text-lg sm:text-xl text-start">
+                  {item.quest}
+                </AccordionTrigger>
+                <AccordionContent className="text-sm sm:text-base font-semibold text-gray-300">
+                  {item.ans}
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          ))}
+        </div>
+      </div>
+      <div className="w-full lg:w-1/2 flex flex-col gap-8 sm:gap-12 h-auto lg:h-[500px] bg-[#369FFF] text-white rounded-2xl lg:rounded-3xl p-6 sm:p-8">
+        <div>
+          <h1 className="text-2xl sm:text-3xl font-bold text-center">
+            Any questions? Let's talk.
+          </h1>
+        </div>
+        <div>
+          <FormFAQ />
         </div>
       </div>
     </div>
+  </div>
   );
 }

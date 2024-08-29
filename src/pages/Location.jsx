@@ -15,10 +15,10 @@ export default function LocationPage() {
   });
   
   return (
-    <div className="flex flex-col p-10 overflow-hidden gap-8 items-center justify-center min-h-screen relative bg-slate-100">
+    <div className="flex flex-col px-10 overflow-hidden gap-8 items-center justify-center min-h-screen bg-slate-100">
       <div className="flex flex-col items-center gap-3">
         <h1 className="text-4xl font-bold text-[#171A23]">GET DIRECTIONS</h1>
-        <h2 className="border-4 w-[340px] rounded-full border-[#14C58F]"></h2>
+        <div className="w-full rounded-full bg-[#14C58F] h-2"></div>
       </div>
       <div className="w-full">
         <MapContainer
@@ -36,7 +36,7 @@ export default function LocationPage() {
           >
             <Popup>
               <div className="flex items-center gap-2">
-              <GraduationCap className="text-red-600"/><h1 className="font-bold">Kathmandu University</h1>
+              <GraduationCap className="text-red-600 gray"/><h1 className="font-bold">Kathmandu University</h1>
               </div>
               <h2 className="text-center font-semibold text-xs">IT MEET 24' VENUE </h2>
             </Popup>

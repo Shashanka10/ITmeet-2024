@@ -23,7 +23,7 @@ export default function HeroPage() {
       </div>
       <div className="text-white flex flex-col gap-2 sm:gap-3 md:gap-4 z-10">
         <h2 className="text-center text-2xl sm:text-3xl md:text-4xl font-semibold">
-          MAKE <span className="font-bold text-[#369FFF]">IT MEET</span> GREAT AGAIN
+          MAKE <span className="font-bold text-transparent bg-clip-text bg-gradient-to-l from-[#369fff] to-[#12dc9f]">IT MEET</span> GREAT AGAIN
         </h2>
         <hr className="w-1/2 mx-auto" />
         <h1 className="text-5xl sm:text-6xl md:text-7xl xl:text-8xl text-center font-bold">

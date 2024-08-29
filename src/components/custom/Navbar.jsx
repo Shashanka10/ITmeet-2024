@@ -85,7 +85,7 @@ export default function Navbar() {
           {items(" justify-between space-x-6 md:flex hidden")}
 
           <div
-            className=" mr-3 md:hidden  font-extrabold text-3xl rounded-full p-3 hover:bg-slate-900 bg-opacity-5 text-primary-foreground "
+            className=" md:hidden  font-extrabold text-3xl rounded-full p-3 hover:bg-slate-900 bg-opacity-5 text-primary-foreground "
           >
             {open ?
               <FaX
@@ -105,7 +105,7 @@ export default function Navbar() {
 
       {open &&
         <div className={`w-full h-auto bg-[#171A23] text-white  fixed  z-50`} onClick={() => setters()}>
-          {items("flex flex-col justify-center  space-y-5 p-5 font-semibold text-gray-400")}
+          {items("flex flex-col justify-center space-y-5 p-5 font-semibold text-gray-400")}
         </div >
       }
     </>
