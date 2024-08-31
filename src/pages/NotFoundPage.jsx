@@ -6,7 +6,7 @@ const NotFoundPage = () => {
   return (
     <div className="flex items-center justify-between bg-gray-950 h-screen text-white">
       <div className="flex flex-col w-1/2 ml-24 space-y-16">
-        <h1 className="text-7xl font-semibold gap-2 flex flex-col">
+        <h1 className="text-7xl tracking-wider font-semibold gap-2 flex flex-col">
           <span className="text-red-500">Oops!</span>Page Not Found
         </h1>
         <div className="flex items-center gap-5 text-xl">

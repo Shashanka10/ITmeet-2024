@@ -17,7 +17,7 @@ function App() {
       <section id="about">
         <AboutPage />
       </section>
-      <section id="pre-events">
+      {/* <section id="pre-events">
         <PreEventPage />
       </section>
       <section id="main-events">
@@ -25,7 +25,7 @@ function App() {
       </section>
       <section id="sponsors">
         <SponsorPage />
-      </section>
+      </section> */}
       <section id="faq">
         <FAQ />
       </section>

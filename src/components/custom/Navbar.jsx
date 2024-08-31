@@ -9,21 +9,21 @@ const navItems = [
     title: "About",
     url: "#about",
   },
-  {
-    id: 2,
-    title: "Pre-events",
-    url: "#pre-events",
-  },
-  {
-    id: 3,
-    title: "Main-events",
-    url: "#main-events",
-  },
-  {
-    id: 4,
-    title: "Sponsors",
-    url: "#sponsors",
-  },
+  // {
+  //   id: 2,
+  //   title: "Pre-events",
+  //   url: "#pre-events",
+  // },
+  // {
+  //   id: 3,
+  //   title: "Main-events",
+  //   url: "#main-events",
+  // },
+  // {
+  //   id: 4,
+  //   title: "Sponsors",
+  //   url: "#sponsors",
+  // },
   {
     id: 5,
     title: "FAQ",
@@ -61,7 +61,7 @@ export default function Navbar() {
       <div className={`${classes} items-center`}>
         {
           navItems.map((item) => (
-            <a key={item.id} href={item.url} className="hover:text-slate-300 uppercase text-sm md:text-base"  >
+            <a key={item.id} href={item.url} className="hover:text-[#14C58F] uppercase text-sm sm:text-base md:text-lg"  >
               {item.title}
             </a>
           ))
@@ -73,7 +73,7 @@ export default function Navbar() {
     <>
       <nav className="sticky bg-[#171A23] top-0 z-50 backdrop-filter backdrop-blur-lg border-b border-gray-900 w-full">
 
-        <div className="flex max-w-7xl mx-auto justify-between items-center font-semibold text-gray-400 py-5 px-4">
+        <div className="flex justify-between items-center font-semibold text-slate-100 py-3 px-6 sm:px-10 md:py-4 lg:py-5 md:px-16 lg:px-20">
           <a href="#">
             <img
               src={ItmeetLogo}
@@ -82,10 +82,10 @@ export default function Navbar() {
             />
           </a>
 
-          {items(" justify-between space-x-6 md:flex hidden")}
+          {items(" justify-between space-x-6 lg:flex hidden")}
 
           <div
-            className=" md:hidden  font-extrabold text-3xl rounded-full p-3 hover:bg-slate-900 bg-opacity-5 text-primary-foreground "
+            className=" lg:hidden font-extrabold text-2xl md:text-3xl rounded-full hover:bg-slate-900 bg-opacity-5 text-primary-foreground "
           >
             {open ?
               <FaX
@@ -104,8 +104,8 @@ export default function Navbar() {
       </nav>
 
       {open &&
-        <div className={`w-full h-auto bg-[#171A23] text-white  fixed  z-50`} onClick={() => setters()}>
-          {items("flex flex-col justify-center space-y-5 p-5 font-semibold text-gray-400")}
+        <div className={`w-full h-auto bg-[#171A23] text-white fixed z-50`} onClick={() => setters()}>
+          {items("flex flex-col justify-center space-y-5 p-5 font-semibold text-slate-200")}
         </div >
       }
     </>

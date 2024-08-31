@@ -16,12 +16,12 @@ const qna = [
   {
     id: 2,
     quest: "When and where will IT MEET 2024 take place?",
-    ans: "IT MEET 2023 will be held at Kathmandu University, Dhulikhel and the Date is yet to be determined.",
+    ans: "IT MEET 2024 will be held at Kathmandu University, Dhulikhel and the date is estimated to be around mid december.",
   },
   {
     id: 3,
     quest: "What is the theme of IT MEET 2024?",
-    ans: "TBD",
+    ans: "Refresh, Reimagine and Innovate",
   },
   {
     id: 4,
@@ -61,12 +61,12 @@ const qna = [
 export default function FAQ() {
 
   return (
-    <div className="flex flex-col overflow-hidden p-6 sm:p-8 md:p-10 gap-6 sm:gap-8 items-center justify-center min-h-screen bg-slate-100">
-    <div className="flex flex-col items-center gap-2 sm:gap-3">
-      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#171A23]">
+    <div className="flex flex-col overflow-hidden p-10 py-20 lg:px-20 gap-6 sm:gap-8 items-center justify-center min-h-screen bg-slate-100">
+    <div className="flex flex-col items-center gap-2 md:gap-4">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl tracking-wider font-bold text-[#171A23]">
         FAQs
       </h1>
-      <div className="w-full rounded-full bg-[#14C58F] h-1 sm:h-2"></div>
+      <div className="w-full rounded-full bg-[#14C58F] h-1.5 md:h-2 lg:h-2.5"></div>
     </div>
     <div className="flex flex-col lg:flex-row items-center w-full mt-0 md:mt-5 justify-between gap-6 sm:gap-8">
       <div className="w-full lg:w-1/2 h-[400px] lg:h-[500px] space-y-3 rounded-2xl lg:rounded-3xl overflow-y-scroll bg-[#171A23] text-white p-6 sm:p-8 lg:pl-12">
