@@ -15,7 +15,7 @@ export default function LocationPage() {
   });
   
   return (
-    <div className="flex flex-col p-10 py-20 lg:px-20 overflow-hidden gap-8 items-center justify-center min-h-screen bg-slate-100">
+    <div className="flex flex-col p-6 sm:p-8 md:p-10 py-20 lg:px-20 overflow-hidden gap-8 items-center justify-center min-h-screen bg-slate-100">
       <div className="flex flex-col items-center gap-2 md:gap-4">
         <h1 className="text-2xl sm:text-3xl md:text-4xl tracking-wider font-bold text-[#171A23]">GET DIRECTIONS</h1>
         <div className="w-full rounded-full bg-[#14C58F] h-1.5 md:h-2 lg:h-2.5"></div>

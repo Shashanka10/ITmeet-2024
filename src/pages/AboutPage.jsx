@@ -3,7 +3,7 @@ import ITMeetLogo from "@/assets/images/itmeetdark.png";
 
 export default function AboutPage() {
   return (
-    <div className="flex flex-col overflow-hidden p-10 py-20 lg:px-20 gap-8 items-center justify-center min-h-screen bg-slate-100">
+    <div className="flex flex-col overflow-hidden p-6 sm:p-8 md:p-10 py-20 lg:px-20 gap-8 items-center justify-center min-h-screen bg-slate-100">
       <div className="flex flex-col items-center gap-2 md:gap-3">
         <h1 className="text-2xl sm:text-3xl md:text-4xl tracking-wider font-bold text-[#171A23]">
           ABOUT IT MEET

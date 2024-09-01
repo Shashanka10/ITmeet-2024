@@ -94,7 +94,7 @@ export default function Footer() {
         </div>
 
         {/* Right part */}
-        <div className="flex flex-col space-y-3 md:space-y-6">
+        <div className="flex flex-col items-center space-y-3 md:space-y-6">
           <h1 className="text-white text-lg md:text-lg sm:text-xl lg:text-2xl">Brand Guidelines</h1>
           <h1 className="text-white text-lg md:text-lg sm:text-xl lg:text-2xl">Brand Assest</h1>
           <p className="text-lg sm:text-xl md:text-lg lg:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#369fff] to-[#12dc9f]">
