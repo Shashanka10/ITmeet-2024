@@ -1,7 +1,21 @@
 import React, { useState } from 'react';
 import { Button } from '../ui/button';
+import { ID } from 'appwrite';
+import { FAQ_COLLECTION_ID, FAQ_DATABASE_ID,databases } from '@/config/appwrite';
 
 function FormFAQ() {
+  console.log(import.meta.env.VITE_APPWRITE_PROJECT_ID);
+  
+
+  async function submitQnAForm() {
+    const response = await databases.createDocument(
+      FAQ_DATABASE_ID,
+      FAQ_COLLECTION_ID,
+      ID.unique(),
+      formData
+    );
+    return response
+  }
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -16,9 +30,10 @@ function FormFAQ() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    let response = await submitQnAForm();
+    console.log('Form submitted:', response);
   };
 
   return (
