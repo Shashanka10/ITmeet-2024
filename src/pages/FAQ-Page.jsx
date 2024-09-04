@@ -68,7 +68,7 @@ export default function FAQ() {
         <div className="w-full rounded-full bg-[#14C58F] h-1.5 md:h-2 lg:h-2.5"></div>
       </div>
       <div className="flex flex-col lg:flex-row items-center w-full mt-0 md:mt-5 justify-between gap-6 sm:gap-8">
-        <div className="w-full lg:w-1/2 h-[400px] lg:h-[500px] space-y-3 rounded-2xl lg:rounded-3xl overflow-y-scroll bg-[#171A23] text-white p-6 sm:p-8 md:p-10 lg:px-10 xl:px-12">
+        <div className="w-full custom-scrollbar lg:w-1/2 h-[400px] lg:h-[500px] space-y-3 rounded-2xl lg:rounded-3xl overflow-y-scroll bg-[#171A23] text-white p-6 sm:p-8 md:p-10 lg:px-10 xl:px-12">
           <div>
             <h1 className="text-lg sm:text-2xl xl:text-3xl font-bold text-center">
               Frequently Asked Questions
@@ -100,7 +100,7 @@ export default function FAQ() {
               Any questions? Let&apos;s talk.
             </h1>
           </div>
-          <div className="mt-4 lg:mt-8 xl:mt-10">
+          <div className="mt-4 lg:mt-4">
             <FormFAQ />
           </div>
         </div>

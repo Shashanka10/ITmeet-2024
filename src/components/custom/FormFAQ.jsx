@@ -1,44 +1,41 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button } from '../ui/button';
 import { ID } from 'appwrite';
 import { FAQ_COLLECTION_ID, FAQ_DATABASE_ID,databases } from '@/config/appwrite';
+import { useForm } from "react-hook-form"
+import toast from 'react-hot-toast';
 
 function FormFAQ() {
   console.log(import.meta.env.VITE_APPWRITE_PROJECT_ID);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset
+  } = useForm();
+
+  const onSubmit = async (data) => {
+    try {
+      const response = await databases.createDocument(
+        FAQ_DATABASE_ID,
+        FAQ_COLLECTION_ID,
+        ID.unique(),
+        data
+      );
+      console.log('Form Submitted:', response);
+      toast.success("Message sent successfully!");
+      reset();
+    } catch (error) {
+      console.error("Error submitting the form: ", error);
+      toast.error("Failed to send message. Please try again.");
+    }
+  };
   
-
-  async function submitQnAForm() {
-    const response = await databases.createDocument(
-      FAQ_DATABASE_ID,
-      FAQ_COLLECTION_ID,
-      ID.unique(),
-      formData
-    );
-    return response
-  }
-  const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
-    message: ''
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = async(e) => {
-    e.preventDefault();
-    let response = await submitQnAForm();
-    console.log('Form submitted:', response);
-  };
 
   return (
     <div>
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         <div className="flex flex-col sm:flex-row sm:gap-5">
           <div className="w-full sm:w-1/2">
             <label htmlFor="fullName" className="text-sm font-medium text-white">
@@ -47,13 +44,22 @@ function FormFAQ() {
             <input
               type="text"
               id="fullName"
-              name="fullName"
-              value={formData.fullName}
-              onChange={handleChange}
-              required
-              className="mt-1 w-full p-2 border text-black border-gray-300 rounded-lg shadow-sm"
+              className={`mt-1 w-full p-2 border text-black border-gray-300 rounded-lg shadow-sm ${
+              errors.fullName ? 'border-red-500' : ''}`}
               placeholder="Enter your full name"
+              {...register("fullName", {
+                required: "Full Name is required", 
+                minLength: {
+                  value: 3,
+                  message: 'Full Name must be at least 3 characters long'
+                },
+                maxLength: {
+                  value: 25,
+                  message: 'Full Name can not exceed 30 characters'
+                },
+              })}
             />
+            {errors.fullName && <p className="text-red-700 text-xs md:text-sm mt-1">{errors.fullName.message}</p>}
           </div>
 
           <div className="w-full sm:w-1/2 mt-4 sm:mt-0">
@@ -63,13 +69,18 @@ function FormFAQ() {
             <input
               type="email"
               id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              className="mt-1 w-full p-2 border text-black border-gray-300 rounded-lg shadow-sm"
+              className={`mt-1 w-full p-2 border text-black border-gray-300 rounded-lg shadow-sm ${
+                errors.email ? 'border-red-500' : ''}`}
               placeholder="Enter your email address"
+              {...register('email', {
+                required: 'Email is required',
+                pattern: {
+                  value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                  message: 'Invalid email address',
+                },
+              })}
             />
+            {errors.email && <p className="text-red-700 text-xs md:text-sm mt-1">{errors.email.message}</p>}
           </div>
         </div>
 
@@ -79,14 +90,23 @@ function FormFAQ() {
           </label>
           <textarea
             id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            required
             rows="4"
-            className="mt-1 resize-none overflow-y-scroll w-full p-2 text-black border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
+            className={`mt-1 resize-none overflow-y-scroll w-full p-2 text-black border border-gray-300 rounded-lg shadow-sm
+               focus:ring-blue-500 focus:border-blue-500 ${errors.message ? 'border-red-500' : ''} `}
             placeholder="Enter your message"
+            {...register('message', {
+              required: 'Message is required',
+              minLength: {
+                value: 10,
+                message: 'Message must be at least 10 characters long',
+              },
+              maxLength: {
+                value: 300,
+                message: 'Message can not exceed 300 characters',
+              },
+            })}
           />
+          {errors.message && <p className="text-red-700 text-xs md:text-sm mt-1">{errors.message.message}</p>}
         </div>
 
         <div className="flex justify-center sm:justify-start">
