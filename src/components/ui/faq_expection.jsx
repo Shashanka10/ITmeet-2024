@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import { Client, Databases, Storage } from "appwrite";
 import { useEffect } from "react";
+import { databases, storage, EXPECT_BUCKET_ID, EXPECT_DATABASE_ID, EXPECT_COLLECTION_ID } from "@/config/appwrite.js";
 
 
 export default function Faq_Expection() {
@@ -28,25 +28,15 @@ export default function Faq_Expection() {
     //For bucket
     file:
     ->with id, matching id of attributes.(1,2,3)
+
   
     */
-
-
-
-    const client = new Client()
-        .setEndpoint('https://cloud.appwrite.io/v1')
-        .setProject('<PROJECT ID>'); //project id
-    const databases = new Databases(client);
-    const storage = new Storage(client);
-
-
-
 
     const list_document = async () => {
         try {
             const response = await databases.listDocuments(
-                '<DATABASE ID>',
-                '<COLLECTION ID>',
+                `${EXPECT_DATABASE_ID}`,
+                `${EXPECT_COLLECTION_ID}`,
             );
             storeData(response.documents)
         } catch (error) {
@@ -57,7 +47,7 @@ export default function Faq_Expection() {
 
     const list_images = async (id) => {
         try {
-            const response = storage.getFileView('<BUCKET ID>', id);
+            const response = storage.getFileView(`${EXPECT_BUCKET_ID}`, id);
             setImageSrc(response.href);
         } catch (error) {
             console.log("While requesting Image from database", error);
@@ -112,7 +102,6 @@ export default function Faq_Expection() {
     const handleClick = (e) => {
         e.preventDefault();
         let parent = e.target.closest(".parent_NodeElement");
-        // parent.insertAdjacentElement("afterend", image_component);
         if (parent.id == targetId) {
             setOpen(!open);
         } else {
